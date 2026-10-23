@@ -1,0 +1,21 @@
+<div class="overlay" *ngIf="screen_loader">
+  <div class="center">
+    <mat-progress-spinner diameter=50 mode="indeterminate" color="primary">
+    </mat-progress-spinner>
+  </div>
+</div>
+
+<h2 class="title">{{'Who_can_see_the_Price_Manager_plugin' | translate }}?</h2>
+
+<section class="permissions-section" [formGroup]="permissions">
+  <p><mat-checkbox formControlName="author">{{'Author' | translate }}</mat-checkbox></p>
+  <p><mat-checkbox formControlName="editor">{{'Editor' | translate }}</mat-checkbox></p>
+  <p><mat-checkbox formControlName="subscriber">{{'Subscriber' | translate }}</mat-checkbox></p>
+  <p><mat-checkbox formControlName="contributor">{{'Contributor' | translate }}</mat-checkbox></p>
+
+</section>
+
+<button mat-raised-button color="primary" (click)="applayPermissions()">
+  <mat-progress-spinner class="mat-progress-spinner-white" *ngIf="loader" diameter="20" mode="indeterminate"></mat-progress-spinner>
+  {{'Applay' | translate }}
+</button>

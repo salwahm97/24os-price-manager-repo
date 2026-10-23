@@ -1,0 +1,60 @@
+<div class="overlay" *ngIf="screen_loader">
+  <div class="center">
+    <mat-progress-spinner diameter=50 mode="indeterminate" color="primary">
+    </mat-progress-spinner>
+  </div>
+</div>
+
+<div class="content" role="main">
+  <div class="lang_div">
+    <button mat-icon-button [matMenuTriggerFor]="menu" color="primary">
+      <mat-icon>language</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="selectLanguage('en')">
+        <span>{{'English' | translate }}</span>
+      </button>
+      <button mat-menu-item (click)="selectLanguage('de')">
+        <span>{{'German' | translate }}</span>
+      </button>
+    </mat-menu>
+  </div>
+
+  <div class="top">
+    <h2 class="title">
+      <mat-icon>library_books</mat-icon>
+      {{'Menus' | translate }} >> <span class="menu">{{menu_name}}</span>
+    </h2>
+    <a href="{{permalink}}" mat-raised-button color="primary">
+      <mat-icon> list_alt</mat-icon><span class="preview-title">{{'Preview' | translate }}</span>
+    </a>
+  </div>
+
+  <!-- tabs -->
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="title-tab">{{'Items' | translate }}</span>
+        <mat-icon>widgets</mat-icon>
+      </ng-template>
+      <app-items class="items_tab"></app-items>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="title-tab">{{'Statistics' | translate }}</span>
+        <mat-icon>equalizer</mat-icon>
+      </ng-template>
+      <app-statistics class="statistics_tab"></app-statistics>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="title-tab">{{'Menu_Settings' | translate }}</span>
+        <mat-icon class="mat-icon-tab">settings</mat-icon>
+      </ng-template>
+      <app-settings class="settings_tab"></app-settings>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

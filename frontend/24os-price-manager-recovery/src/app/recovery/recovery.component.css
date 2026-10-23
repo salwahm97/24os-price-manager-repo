@@ -1,0 +1,114 @@
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.overlay{
+  height:100vh;
+  width:100%;
+  background-color:rgba(0, 0, 0, 0.286);
+  z-index:    10;
+  top:        0;
+  left:       0;
+  position:   fixed;
+}
+
+
+.recovery_table{
+  width: 100%;
+  box-shadow: 0 0 8px 0 #00000030;
+}
+
+.title{
+  font-weight: bold;
+  color: #696969;
+  font-size: 1.3rem;
+}
+.counts_menus{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.counts_menus .all{
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 600;
+}
+.counts_menus a{
+  font-size: 0.8rem;
+  color: #5abac5;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.counts_menus a:hover{
+  cursor: pointer;
+  color: #73d5e0;
+}
+
+.counts_menus a mat-icon{
+  font-size:17px;
+  height: auto;
+  width: auto;
+  padding-right: 4px;
+}
+
+.menu_position_col{
+  width: 18px;
+  text-align: center;
+}
+.menu_col{
+  padding-left: 16px;
+  width:400px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.menu_name{
+  font-weight: 800;
+}
+.menu_types{
+  font-size: 11px;
+  color: #999999;
+  display: block;
+  margin: 7px 0 0;
+}
+.menu_info{
+  font-size: 11px;
+  color: #999999;
+  display: block;
+  margin: 0;
+}
+.menu_actions_col{
+  text-align: center;
+  width: 100px;
+}
+.menu_actions_col div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu_actions_col div button{
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+.menu_actions_col div button mat-icon{
+  font-size: 17px;
+  width: auto;
+  height: auto;
+}
+
+:host ::ng-deep .mat-progress-spinner{
+  display: inline-block;
+
+}
+
+@media screen and (max-width: 960px) {
+  .dr_span{
+    display: none;
+  }
+
+}

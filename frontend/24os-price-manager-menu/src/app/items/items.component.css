@@ -1,0 +1,165 @@
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.overlay{
+  height:100vh;
+  width:100%;
+  background-color:rgba(0, 0, 0, 0.286);
+  z-index:    10;
+  top:        0;
+  left:       0;
+  position:   fixed;
+}
+
+.top-buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sort-expand-action-buttons
+{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.expand-btn{
+  margin-left: 4px;
+}
+.action_buttons{
+  width:auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.add_item_btn_div{
+  display: flex;
+  justify-content: end;
+  margin-top: 5px;
+}
+
+mat-expansion-panel-header{
+  padding: 15px;
+}
+
+mat-expansion-panel-header{
+  height: auto;
+}
+mat-panel-title div{
+  display: flex;
+}
+
+mat-panel-title p{
+  color: #999;
+  font-weight: 400;
+  max-height: 65px;
+  margin: 0;
+  line-break: auto;
+  width: 70%;
+  margin-left: 20px;
+}
+
+img{
+  height: auto;
+  width: auto;
+  max-width: 90px;
+  max-height: 90px;
+  object-fit: contain;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #eeee;
+}
+
+.items_count{
+  color: #e0eb51;
+  font-weight: 500;
+  margin-left: 5px;
+}
+.img_div{
+  display: flex;
+  align-items: center;
+}
+.items{
+  position: relative;
+  padding: 10px;
+  background: #f1f7f9;
+  border: 1px solid #00000020;
+  display: flex;
+  align-items: center;
+
+}
+
+.items:hover{
+  cursor: pointer;
+  background-color: #175e7a22;
+}
+.items .item_num{
+  font-weight: 500;
+  color: #555;
+  padding-right: 6px;
+  margin-right: 6px;
+  border-right: 2px solid #999;
+}
+.items .item_name{
+  font-weight: 500;
+  margin : 5px 0 0 0;
+}
+.ina{
+  display: inline-flex;
+}
+.items .item_allergens{
+  padding-left: 5px;
+  font-weight: 500;
+  color: #999;
+}
+.items .item_desc{
+  color: #999;
+  padding-top: 5px;
+  margin: 0;
+  font-style: italic;
+}
+.items .item_prices span{
+  margin-right: 5px;
+}
+.items .item_prices span .p{
+  color:red;
+  margin-right: 5px;
+}
+.items .item_prices span .s{
+  font-size: smaller;
+  color:#777;
+}
+
+.delete_item_btn{
+  position: absolute;
+  top:0;
+  right: 0;
+}
+:host ::ng-deep .mat-expansion-panel-body{
+  padding: 0 5px 5px 5px;
+}
+
+@media screen and (max-width: 960px) {
+  .items{
+    display: flex;
+    flex-flow: column;
+    align-items: start;
+  }
+  img{
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .img_div{
+    display: flex;
+    flex-flow: column;
+    align-items: start;
+  }
+}

@@ -1,0 +1,94 @@
+<div class="overlay" *ngIf="screen_loader">
+  <div class="center">
+    <mat-progress-spinner diameter=50 mode="indeterminate" color="primary">
+    </mat-progress-spinner>
+  </div>
+</div>
+
+<div class="top-buttons">
+  <a mat-raised-button color="primary" class="add_category_btn" (click)="openCategoryPopupAdd('create', menu_id)">
+    <mat-icon>add</mat-icon>
+    {{'New_Category' | translate }}
+  </a>
+  <div class="sort-expand-action-buttons">
+    <button mat-raised-button *ngIf="!sort" (click)="optionSort(true)"><mat-icon>swap_vert</mat-icon></button>
+    <button mat-raised-button color="accent" *ngIf="sort" (click)="optionSort(false)"><mat-icon>swap_vert</mat-icon></button>
+    <button mat-raised-button class="expand-btn" *ngIf="!expand" (click)="optionExpand(true)"><mat-icon>unfold_more</mat-icon></button>
+    <button mat-raised-button color="accent" class="expand-btn" *ngIf="expand" (click)="optionExpand(false)"><mat-icon>unfold_less</mat-icon></button>
+  </div>
+
+
+</div>
+
+
+<mat-accordion class="example-headers-align" multi cdkDropList (cdkDropListDropped)="dropCat($event, categories)">
+  <mat-expansion-panel *ngFor="let category of categories;let i = index;" hideToggle cdkDrag [cdkDragDisabled]="!sort">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <div class="img_div">
+          <img *ngIf="category_image === true" [src]="category.category_img">
+          <div>
+            <span>{{category.category_name}}</span>
+            <span class="items_count">({{category.items_count}})</span>
+          </div>
+        </div>
+
+        <p>{{category.category_desc}}</p>
+
+      </mat-panel-title>
+
+      <div class="action_buttons" (click)="$event.stopPropagation()">
+        <button *ngIf="!sort" mat-icon-button color="warn" (click)="confirmCategoryDelete(category.category_id, category.category_name)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button *ngIf="!sort" mat-icon-button color="primary" (click)="openCategoryPopupEdit('edit', menu_id, category.category_id, category.category_name, category.category_desc, category.index, category.category_img)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button *ngIf="sort" mat-icon-button>
+          <mat-icon>swap_vert</mat-icon>
+        </button>
+      </div>
+    </mat-expansion-panel-header>
+
+    <div cdkDropList (cdkDropListDropped)="dropItem($event, category.category_items)">
+      <div class="items" *ngFor="let item of category.category_items;let i = index" cdkDrag [cdkDragDisabled]="!sort" (click)="openItemPopupEdit('edit',  category.category_id, item.item_id, item.item_num, item.item_name, item.item_desc, item.item_allergens, item.item_prices, item.index, item.item_img)">
+        <img *ngIf="item_image === true" [src]="item.item_img">
+        <div>
+          <span class="item_num">{{item.item_num}}</span>
+          <div class="ina">
+            <h4 class="item_name">{{item.item_name}}</h4>
+            <span *ngIf="item.item_allergens != ''" class="item_allergens">
+              ({{item.item_allergens}})
+            </span>
+          </div>
+          <p class="item_desc">{{item.item_desc}}</p>
+          <div class="item_prices">
+            <span *ngFor="let p of item.item_prices">
+              <span class="p">{{p?.item_price}}</span>
+              <span class="s">({{p?.item_size}})</span>
+            </span>
+          </div>
+        </div>
+
+        <div (click)="$event.stopPropagation()">
+          <a mat-button class="delete_item_btn" (click)="confirmItemDelete(item.item_id, item.item_name, i, category.category_items)">
+            <mat-icon color="warn">close</mat-icon>
+          </a>
+        </div>
+
+      </div>
+
+
+      <div class="add_item_btn_div">
+        <a mat-stroked-button color="primary" class="add_item_btn" (click)="openItemPopupAdd('create', category.category_id)">
+          <mat-icon>add</mat-icon>
+          {{'New_Item' | translate }}
+        </a>
+      </div>
+
+    </div>
+
+
+
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,0 +1,72 @@
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.overlay{
+  height:100vh;
+  width:100%;
+  background-color:rgba(0, 0, 0, 0.286);
+  z-index:    10;
+  top:        0;
+  left:       0;
+  position:   fixed;
+}
+
+.form_field_category{
+  width:100%;
+}
+.form_field_category_desc{
+  width:100%;
+}
+textarea:focus {
+  border-color: unset;
+  box-shadow: none;
+  outline: 2px solid transparent;
+}
+
+img{
+  height: auto;
+  width: auto;
+  max-width: 130px;
+  max-height: 130px;
+  object-fit: contain;
+  border: 1px solid #eeee;
+  border-radius: 5px;
+}
+img:hover{
+  cursor:pointer;
+  box-shadow: 0 1px 3px 0 gray;
+}
+.preview_name{
+  display: block;
+}
+
+.mat-dialog-content{
+  text-align: center;
+}
+
+:host ::ng-deep .mat-progress-spinner-white{
+  display: inline-block;
+
+}
+:host ::ng-deep .mat-progress-spinner-white circle {
+  stroke: #fff;
+}
+
+::ng-deep .form_field_category .mat-form-field-wrapper{
+  padding-bottom: 10px;
+}
+::ng-deep .form_field_category_desc .mat-form-field-wrapper{
+  padding-bottom: 0;
+}
+
+@media screen and (max-width: 960px) {
+  ::ng-deep .fullscreen-dialog {
+    max-width: 100% !important;
+    width: 100%;
+  }
+}

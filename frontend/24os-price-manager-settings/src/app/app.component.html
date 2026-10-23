@@ -1,0 +1,55 @@
+<div class="overlay" *ngIf="screen_loader">
+  <div class="center">
+    <mat-progress-spinner diameter=50 mode="indeterminate" color="primary">
+    </mat-progress-spinner>
+  </div>
+</div>
+
+<div class="content" role="main">
+  <div class="lang_div">
+    <button mat-icon-button [matMenuTriggerFor]="menu" color="primary">
+      <mat-icon>language</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="selectLanguage('en')">
+        <span>{{'English' | translate }}</span>
+      </button>
+      <button mat-menu-item (click)="selectLanguage('de')">
+        <span>{{'German' | translate }}</span>
+      </button>
+    </mat-menu>
+  </div>
+
+  <h2 class="title">
+    <mat-icon>admin_panel_settings</mat-icon>
+    {{'Admin_Settings' | translate }}
+  </h2>
+
+  <!-- tabs -->
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="title-tab">{{'Allergens' | translate }}</span>
+        <mat-icon class="mat-icon-tab">bug_report</mat-icon>
+      </ng-template>
+      <app-allergen class="allergen_tab"></app-allergen>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="title-tab">{{'Database' | translate }}</span>
+        <mat-icon class="mat-icon-tab">build</mat-icon>
+      </ng-template>
+      <app-database class="database_tab"></app-database>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="title-tab">{{'Permissions' | translate }}</span>
+        <mat-icon class="mat-icon-tab">supervisor_account</mat-icon>
+      </ng-template>
+      <app-permissions class="permissions_tab"></app-permissions>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

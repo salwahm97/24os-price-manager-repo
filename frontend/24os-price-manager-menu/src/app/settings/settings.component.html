@@ -1,0 +1,90 @@
+<div class="overlay" *ngIf="screen_loader">
+  <div class="center">
+    <mat-progress-spinner diameter=50 mode="indeterminate" color="primary">
+    </mat-progress-spinner>
+  </div>
+</div>
+
+<mat-card>
+  <mat-card-content>
+    <div class="title">
+      <mat-icon>style</mat-icon>
+      <h5>{{'STYLES_MANAGE' | translate }}</h5>
+    </div>
+    <section class="styles-section">
+      <label class="styles-margin">{{'Menu_Style' | translate }}:</label>
+      <mat-radio-group [(ngModel)]="labelPosition">
+        <mat-radio-button class="styles-margin" value="1" (change)="radioChange(menu_id, $event)">{{'without_images' | translate }}</mat-radio-button>
+        <mat-radio-button class="styles-margin" value="2" (change)="radioChange(menu_id, $event)">{{'with_images' | translate }}</mat-radio-button>
+      </mat-radio-group>
+    </section>
+  </mat-card-content>
+
+
+</mat-card>
+
+<mat-card>
+  <mat-card-content>
+    <div class="title">
+      <mat-icon>sync</mat-icon>
+      <h5>{{'NUMBERS_MANAGE' | translate }}</h5>
+    </div>
+    <section class="numbers-section">
+      <label class="numbers-margin">{{'Automatic_renumbering_of_items_in_order' | translate }} ?</label>
+      <button mat-mini-fab (click)="renumber(menu_id)">
+        <mat-icon>sync</mat-icon>
+      </button>
+    </section>
+  </mat-card-content>
+
+</mat-card>
+
+<mat-card>
+  <mat-card-content>
+    <div class="title">
+      <mat-icon>euro_symbol</mat-icon>
+      <h5>{{'PRICES_MANAGE' | translate }}</h5>
+    </div>
+    <section class="price-section">
+      <div>
+        <label class="price-margin">{{'Increase_the_prices_of_all_items_in_this_menu' | translate }}:</label>
+        <mat-select class="price-select" [(value)]="selection_price" (selectionChange)="setOptionPriceItemsMenu($event)">
+          <mat-option value="percentage">{{'percentage' | translate }}</mat-option>
+          <mat-option value="value">{{'value' | translate }}</mat-option>
+        </mat-select>
+      </div>
+
+      <div class="price-inputs">
+        <mat-form-field appearance="fill" class="amount">
+          <mat-label>{{'Amount' | translate }}</mat-label>
+          <input matInput type="number" placeholder="0" [(ngModel)]="amount" required>
+          <span matSuffix *ngIf="selection_price == 'percentage'">&nbsp; %</span>
+        </mat-form-field>
+        <button mat-mini-fab color="accent" (click)="incPrice(menu_id)" [disabled]="amount == undefined">
+          <mat-icon>done</mat-icon>
+        </button>
+      </div>
+
+    </section>
+  </mat-card-content>
+
+</mat-card>
+
+<mat-card>
+  <mat-card-content>
+    <div class="title">
+      <mat-icon>image</mat-icon>
+      <h5>{{'IMAGES_MANAGE' | translate }}</h5>
+    </div>
+    <section class="image-section">
+      <label class="image-margin">{{'The_possibility_of_inserting_pictures_at_the' | translate }}:</label>
+      <mat-select class="image-select" [(value)]="selection" (selectionChange)="setOptionImageMenu(menu_id, $event)">
+        <mat-option value="without_image">{{'without_images' | translate }}</mat-option>
+        <mat-option value="item_image">{{'item' | translate }}</mat-option>
+        <mat-option value="category_image">{{'category' | translate }}</mat-option>
+      </mat-select>
+
+    </section>
+  </mat-card-content>
+
+</mat-card>

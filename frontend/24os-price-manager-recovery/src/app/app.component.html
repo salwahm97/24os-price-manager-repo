@@ -1,0 +1,23 @@
+<div class="overlay" *ngIf="screen_loader">
+  <div class="center">
+    <mat-progress-spinner diameter=50 mode="indeterminate" color="primary">
+    </mat-progress-spinner>
+  </div>
+</div>
+
+<div class="content" role="main">
+  <div class="lang_div">
+    <button mat-icon-button [matMenuTriggerFor]="menu" color="primary">
+      <mat-icon>language</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="selectLanguage('en')">
+        <span>{{'English' | translate }}</span>
+      </button>
+      <button mat-menu-item (click)="selectLanguage('de')">
+        <span>{{'German' | translate }}</span>
+      </button>
+    </mat-menu>
+  </div>
+  <app-recovery></app-recovery>
+</div>

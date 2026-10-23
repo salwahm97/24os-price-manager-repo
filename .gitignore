@@ -1,0 +1,22 @@
+# secrets / environment
+.env
+.env.*
+*.pem
+*.key
+wp-config.php
+*.sql
+*.sql.gz
+
+# dependencies & build caches
+node_modules/
+.angular/
+dist/
+vendor/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+*.zip

@@ -1,0 +1,20 @@
+<div class="overlay" *ngIf="screen_loader">
+  <div class="center">
+    <mat-progress-spinner diameter=50 mode="indeterminate" color="primary">
+    </mat-progress-spinner>
+  </div>
+</div>
+
+<h2 class="title">{{'Configuration_Database_Price_Manager' | translate }}</h2>
+<button mat-raised-button color="warn" (click)="resetDatabase()">
+  <mat-progress-spinner class="mat-progress-spinner-white" *ngIf="loader" diameter="20" mode="indeterminate"></mat-progress-spinner>
+  {{'Reset_Tables_Database_for_this_plugin' | translate }}
+</button>
+<div class="notifications">
+  <span class="bell-icon">
+    <mat-icon color="warn">notifications_none</mat-icon>
+  </span>
+  <p>
+    {{'Reset_the_database_will_lead_to_the_loss_of_all_publications_of_menus_published_by_you_and_all_users' | translate }}.
+  </p>
+</div>

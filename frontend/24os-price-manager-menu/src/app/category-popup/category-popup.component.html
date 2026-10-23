@@ -1,0 +1,50 @@
+<div class="overlay" *ngIf="screen_loader">
+  <div class="center">
+    <mat-progress-spinner diameter=50 mode="indeterminate" color="primary">
+    </mat-progress-spinner>
+  </div>
+</div>
+
+<h2 mat-dialog-title *ngIf="data.title == 'Create New Category'">{{'Create_New_Category' | translate }}</h2>
+<h2 mat-dialog-title *ngIf="data.title == 'Edit Category'">{{'Edit_Category' | translate }}</h2>
+
+<form [formGroup]="reactiveCategoryForm" (ngSubmit)="submitCategoryDialog(data.action, data.menu_id, data.id, data.index, preview)">
+  <div mat-dialog-content>
+
+    <div *ngIf="data.category_image === true">
+      <img [src]="preview" (click)="selectImage.click()">
+      <mat-label class="preview_name">{{preview_name}}</mat-label>
+      <input
+        type="file"
+        accept="image/*"
+        hidden
+        #selectImage
+        (change)="selectFileImage($event)"
+      />
+    </div>
+
+    <mat-form-field appearance="outline" class="form_field_category">
+      <mat-label>{{'Category' | translate }}</mat-label>
+      <input matInput formControlName="category_name">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="form_field_category_desc">
+      <mat-label>{{'Description' | translate }}</mat-label>
+      <textarea matInput formControlName="category_desc"></textarea>
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true">{{'Cancel' | translate }}</button>
+    <button type="submit" mat-flat-button color="primary" *ngIf="data.action==='create'; else edit" class="create_btn">
+      <mat-progress-spinner class="mat-progress-spinner-white" *ngIf="loader" diameter="20" mode="indeterminate"></mat-progress-spinner>
+      {{'Create' | translate }}
+    </button>
+    <ng-template #edit>
+      <button type="submit" mat-flat-button color="primary">
+        <mat-progress-spinner class="mat-progress-spinner-white" *ngIf="loader" diameter="20" mode="indeterminate"></mat-progress-spinner>
+        {{'Save' | translate }}
+      </button>
+    </ng-template>
+  </div>
+
+</form>

@@ -1,0 +1,98 @@
+{
+  "Menus"      : "Menus",
+  "All"        : "All",
+  "publish"    : "publish",
+  "trash"      : "trash",
+  "filter"     : "Filter",
+  "create_new" : "Create New",
+  "Num"        : "Num",
+  "Menu"       : "Menu",
+  "Categories" : "Categories",
+  "Items"      : "Items",
+  "Actions"    : "Actions",
+  "Type"       : "Type",
+  "Published_by" : "Published by",
+  "views"      : "views",
+  "No_data_matching_the_filter" : "No data matching the filter",
+
+  "Create_New_Menu" : "Create New Menu",
+  "Edit_Menu"       : "Edit Menu",
+  "Menu_Name"       : "Menu Name",
+  "Menu_Type"       : "Menu Type",
+  "Create"          : "Create",
+  "Save"            : "Save",
+  "Cancel"          : "Cancel",
+
+  "Preview"         : "Vorschau",
+  "Statistics"      : "Statistics",
+  "Menu_Settings"   : "Menu Settings",
+  "New_Item"        : "New Item",
+  "New_Category"    : "New Category",
+
+  "STYLES_MANAGE"   : "STYLES MANAGE",
+  "Menu_Style"      : "Menu Style",
+  "without_images"  : "without images",
+  "with_images"     : "with images",
+  "NUMBERS_MANAGE"  : "NUMBERS MANAGE",
+  "Automatic_renumbering_of_items_in_order" : "Automatic renumbering of items in order",
+  "PRICES_MANAGE"   : "PRICES MANAGE",
+  "Increase_the_prices_of_all_items_in_this_menu" : "Increase the prices of all items in this menu",
+  "percentage"      : "percentage",
+  "value"           : "value",
+  "Amount"          : "Amount",
+  "IMAGES_MANAGE"   : "IMAGES MANAGE",
+  "The_possibility_of_inserting_pictures_at_the" : "The possibility of inserting pictures at the",
+  "item"            : "item",
+  "category"        : "category",
+
+  "Total_Visits"    : "Total Visits",
+  "Visitor"         : "Visitor",
+
+  "Create_New_Category" : "Create New Category",
+  "Edit_Category"       : "Edit Category",
+  "Category"            : "Category",
+  "Description"         : "Description",
+
+  "Create_New_Item"     : "Create New Item",
+  "Edit_Item"           : "Edit Item",
+  "Info"                : "Info",
+  "Item"                : "Item",
+  "Prices"              : "Prices",
+  "Price"               : "Price",
+  "Size"                : "Size",
+  "Allergens"           : "Allergens",
+
+  "Recovery_Menus"      : "Recovery Menus",
+  "Delete"              : "Delete",
+  "Restore"             : "Restore",
+
+  "Who_can_see_the_Price_Manager_plugin" : "Who can see the Price Manager plugin",
+  "Author"              : "Author",
+  "Editor"              : "Editor",
+  "Subscriber"          : "Subscriber",
+  "Contributor"         : "Contributor",
+  "Applay"              : "Applay",
+
+  "Configuration_Database_Price_Manager"  : "Configuration Database Price Manager",
+  "Reset_Tables_Database_for_this_plugin" : "Reset Tables Database for this plugin",
+  "Reset_the_database_will_lead_to_the_loss_of_all_publications_of_menus_published_by_you_and_all_users" :
+  "Reset the database will lead to the loss of all publications of menus published by you and all users",
+
+  "Create_New_Allergen"  : "Create New Allergen",
+  "Edit_Allergen"        : "Edit Allergen",
+  "Allergen"             : "Allergen",
+  "New_Allergen"         : "New Allergen",
+
+  "Admin_Settings"     : "Admin Settings",
+  "Database"           : "Database",
+  "Permissions"        : "Permissions",
+
+  "Agent"              : "Agent",
+  "IP_Address"         : "IP Address",
+  "Date"              : "Date",
+  "Visits"            : "Visits",
+
+
+  "German"          : "German",
+  "English"         : "English"
+}

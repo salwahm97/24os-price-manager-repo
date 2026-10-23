@@ -1,0 +1,137 @@
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.overlay{
+  height:100vh;
+  width:100%;
+  background-color:rgba(0, 0, 0, 0.286);
+  z-index:    10;
+  top:        0;
+  left:       0;
+  position:   fixed;
+}
+.dialog-title{
+  margin: 0;
+}
+
+img{
+  height: auto;
+  width: auto;
+  max-width: 130px;
+  max-height: 130px;
+  object-fit: contain;
+  border: 1px solid #eeee;
+  border-radius: 5px;
+}
+img:hover{
+  cursor:pointer;
+  box-shadow: 0 1px 3px 0 gray;
+}
+.preview_name{
+  display: block;
+}
+.image_div{
+  text-align: center;
+}
+
+.title-info{
+  margin: 0 0 6px 0;
+}
+.title-aller{
+  margin: 10px 0 6px 0;
+}
+.title-prices{
+  margin: 10px 0 6px 0;
+}
+.info_item{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form_field_item_num{
+  margin-right: 5px;
+  width: 25%;
+}
+::ng-deep .form_field_item_num .mat-form-field-wrapper{
+  padding-bottom: 6px;
+}
+.form_field_item_name{
+  width: 75%;
+}
+::ng-deep .form_field_item_name .mat-form-field-wrapper{
+  padding-bottom: 6px;
+}
+.form_field_item_desc{
+  width:100%;
+}
+::ng-deep .form_field_item_desc .mat-form-field-wrapper{
+  padding-bottom: 0;
+}
+.item_prices{
+  width:100%;
+
+}
+.form_field_item_price{
+  width: 45%;
+  margin-right: 5px;
+}
+::ng-deep .form_field_item_price .mat-form-field-wrapper{
+  padding-bottom: 0;
+}
+.form_field_item_size{
+  width: 44%;
+  margin-right: 5px;
+}
+::ng-deep .form_field_item_size .mat-form-field-wrapper{
+  padding-bottom: 0;
+}
+.remove_price_btn{
+  color: red;
+  background-color: #ffffff00;
+  border: none;
+}
+.remove_price_btn:hover{
+  color: #aa0707;
+  cursor: pointer;
+}
+textarea:focus {
+  border-color: unset;
+  box-shadow: none;
+  outline: 2px solid transparent;
+}
+.form_field_allergen{
+  width: 100%;
+}
+::ng-deep .form_field_allergen .mat-form-field-wrapper{
+  padding-bottom: 0;
+}
+:host ::ng-deep .mat-progress-spinner-white{
+  display: inline-block;
+
+}
+:host ::ng-deep .mat-progress-spinner-white circle {
+  stroke: #fff;
+}
+::ng-deep .mat-form-field-wrapper{
+  margin-bottom: 0;
+  padding: 0;
+}
+
+::ng-deep .form_field_allergen .mat-form-field-wrapper{
+  padding-bottom: 1.34375em;
+}
+
+@media screen and (max-width: 960px) {
+  ::ng-deep .fullscreen-item-dialog {
+    max-width: 100% !important;
+    max-height: auto !important;
+    width: 100%;
+    height:auto;
+  }
+}

@@ -1,0 +1,57 @@
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.overlay{
+  height:100vh;
+  width:100%;
+  background-color:rgba(0, 0, 0, 0.286);
+  z-index:    10;
+  top:        0;
+  left:       0;
+  position:   fixed;
+}
+
+
+.allergen_table{
+  width: 100%;
+  box-shadow: 0 0 8px 0 #00000030;
+}
+.top_table_allergen{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.allergen_position_col{
+  width: 18px;
+  text-align: center;
+}
+.allergen_col{
+  padding-left: 16px;
+  width:100px;
+}
+.allergen_desc_header_col{
+  width:300px;
+}
+.allergen_desc_col{
+  font-size: small;
+  color: #666;
+  width:300px;
+}
+.allergen_actions_col{
+  text-align: center;
+  width:100px;
+}
+.allergen_actions_col div{
+  display: flex;
+  justify-content: center;
+}
+
+.allergen_paginator{
+  background-color: #3f51b520;
+
+}

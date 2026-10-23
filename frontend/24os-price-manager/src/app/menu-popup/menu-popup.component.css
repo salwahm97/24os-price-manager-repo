@@ -1,0 +1,52 @@
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.overlay{
+  height:100vh;
+  width:100%;
+  background-color:rgba(0, 0, 0, 0.286);
+  z-index:    10;
+  top:        0;
+  left:       0;
+  position:   fixed;
+}
+
+.label{
+  color:#3f51b5;
+  font-size: 14px;
+}
+
+.form_field_menu_name{
+  width:100%;
+}
+
+.form_field_price_manager_post_categories{
+  width:100%;
+}
+
+:host ::ng-deep .mat-progress-spinner-white{
+  display: inline-block;
+
+}
+:host ::ng-deep .mat-progress-spinner-white circle {
+  stroke: #fff;
+}
+
+::ng-deep .form_field_menu_name .mat-form-field-wrapper{
+  padding-bottom: 10px;
+}
+::ng-deep .form_field_price_manager_post_categories .mat-form-field-wrapper{
+  padding-bottom: 0;
+}
+
+@media screen and (max-width: 960px) {
+  ::ng-deep .fullscreen-dialog {
+    max-width: 100% !important;
+    width: 100%;
+  }
+}

@@ -1,0 +1,96 @@
+<div class="overlay" *ngIf="screen_loader">
+  <div class="center">
+    <mat-progress-spinner diameter=50 mode="indeterminate" color="primary">
+    </mat-progress-spinner>
+  </div>
+</div>
+
+<h2 mat-dialog-title class="dialog-title" *ngIf="data.title == 'Create New Item'">{{'Create_New_Item' | translate }}</h2>
+<h2 mat-dialog-title class="dialog-title" *ngIf="data.title == 'Edit Item'">{{'Edit_Item' | translate }}</h2>
+
+<form [formGroup]="reactiveItemForm" (ngSubmit)="submitItemDialog(data.action, data.category_id, data.id, data.index, preview)">
+  <div mat-dialog-content>
+    <div *ngIf="data.item_image === true" class="image_div">
+      <img [src]="preview" (click)="selectImage.click()">
+      <mat-label class="preview_name">{{preview_name}}</mat-label>
+      <input
+        type="file"
+        accept="image/*"
+        hidden
+        #selectImage
+        (change)="selectFileImage($event)"
+      />
+    </div>
+    <!-- info -->
+    <div class="info">
+      <h3 class="title-info">{{'Info' | translate }}:</h3>
+      <div class="info_item">
+        <mat-form-field appearance="outline" class="form_field_item_num">
+          <mat-label>{{'Num' | translate }}.</mat-label>
+          <input matInput formControlName="item_num">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="form_field_item_name">
+          <mat-label>{{'Item' | translate }}</mat-label>
+          <input matInput formControlName="item_name">
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="form_field_item_desc">
+        <mat-label>{{'Description' | translate }}</mat-label>
+        <textarea matInput formControlName="item_desc"></textarea>
+      </mat-form-field>
+    </div>
+
+    <!-- pricec -->
+    <div class="prices">
+      <h3 class="title-prices">{{'Prices' | translate }}:</h3>
+      <div *ngFor="let control of  pricesFieldAsFormArray.controls ;let i = index;"  formArrayName='prices'>
+        <div [formGroupName]="i" class="item_prices">
+          <mat-form-field appearance="outline" class="form_field_item_price">
+            <mat-label>{{'Price' | translate }}</mat-label>
+            <input matInput placeholder="0.00" formControlName="item_price">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="form_field_item_size">
+            <mat-label>{{'Size' | translate }}</mat-label>
+            <input matInput placeholder="28cm" formControlName="item_size">
+          </mat-form-field>
+          <button class="remove_price_btn" (click)="remove(i)">
+            <mat-icon>highlight_off</mat-icon>
+          </button>
+        </div>
+      </div>
+      <a mat-stroked-button color="primary" class="add_price_btn" (click)="addControl('', '')">
+        <mat-icon>add</mat-icon>
+      </a>
+    </div>
+
+    <!-- allergens -->
+    <h3 class="title-aller">{{'Allergens' | translate }}:</h3>
+    <mat-form-field appearance="outline" class="form_field_allergen">
+      <mat-select formControlName="allergens" multiple [(ngModel)]="selection">
+        <mat-option *ngFor="let allergen of allergenList"
+          [value]="allergen.allergen">
+          <span style="font-weight: 600;">{{allergen.allergen}}</span>
+          <span style="padding: 0 7px;"></span>
+          <span>{{allergen.allergen_desc}}</span>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <div mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true">{{'Cancel' | translate }}</button>
+    <button type="submit" mat-flat-button color="primary" *ngIf="data.action==='create'; else edit" class="create_btn">
+      <mat-progress-spinner class="mat-progress-spinner-white" *ngIf="loader" diameter="20" mode="indeterminate"></mat-progress-spinner>
+      {{'Create' | translate }}
+    </button>
+    <ng-template #edit>
+      <button type="submit" mat-flat-button color="primary">
+        <mat-progress-spinner class="mat-progress-spinner-white" *ngIf="loader" diameter="20" mode="indeterminate"></mat-progress-spinner>
+        {{'Save' | translate }}
+      </button>
+    </ng-template>
+  </div>
+
+</form>

@@ -1,0 +1,64 @@
+.counts{
+  margin-bottom: 17px;
+  font-size: .8rem;
+  font-weight: 500;
+  color: #777;
+}
+
+table {
+  width: 100%;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-detail-row td{
+  padding-right: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+  cursor: pointer;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow-y: scroll;
+  max-height: 215px;
+}
+
+.example-element-old-visits {
+  color: #999;
+  font-size: .8rem;
+  padding: 10px 0;
+  width: 100%;
+}
+.example-element-old-visits .old_visit{
+  border-top: 1px solid #ccc;
+}
+
+.cdk-column-Agent{
+  width: 600px;
+}
+.cdk-column-Visits{
+  width: 50px;
+  text-align: center;
+}
+.cdk-column-IP_Address{
+  width: 300px;
+  text-align: center;
+
+}
+.cdk-column-Date{
+  width: 220px;
+  text-align: center;
+
+}

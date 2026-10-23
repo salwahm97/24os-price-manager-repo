@@ -1,0 +1,50 @@
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.overlay{
+  height:100vh;
+  width:100%;
+  background-color:rgba(0, 0, 0, 0.286);
+  z-index:    10;
+  top:        0;
+  left:       0;
+  position:   fixed;
+}
+
+.form_field_allergen{
+  width:100%;
+}
+.form_field_allergen_desc{
+  width:100%;
+}
+
+
+:host ::ng-deep .mat-progress-spinner-white{
+  display: inline-block;
+
+}
+:host ::ng-deep .mat-progress-spinner-white circle {
+  stroke: #fff;
+}
+textarea:focus {
+  border-color: unset;
+  box-shadow: none;
+  outline: 2px solid transparent;
+}
+::ng-deep .form_field_allergen .mat-form-field-wrapper{
+  padding-bottom: 10px;
+}
+::ng-deep .form_field_allergen_desc .mat-form-field-wrapper{
+  padding-bottom: 0;
+}
+@media screen and (max-width: 960px) {
+  ::ng-deep .fullscreen-dialog {
+    max-width: 100% !important;
+    width: 100%;
+  }
+}
